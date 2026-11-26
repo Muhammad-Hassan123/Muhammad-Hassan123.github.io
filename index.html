@@ -4,166 +4,274 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Muhammad Hassan</title>
-<meta name="description" content="Muhammad Hassan, AI engineer building LLM applications, RAG and evaluation on solid data and backend foundations. Selected work with measured results.">
+<meta name="description" content="Muhammad Hassan, AI engineer building LLM applications, RAG and evaluation on solid data and backend foundations.">
+<meta property="og:title" content="Muhammad Hassan">
+<meta property="og:description" content="AI engineer building LLM applications, RAG and evaluation on solid data and backend foundations.">
+<meta property="og:image" content="https://muhammad-hassan123.github.io/hassan.jpg">
+<meta property="og:type" content="profile">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&display=swap">
 <style>
-/* Layout: one reading column; each case is a ledger entry whose measured result sits beside it as a readout. */
+/* One family, Archivo, used across its width axis: wide and heavy for the name and headings, normal width for reading. Palette taken from the portrait's backdrop: plum ink, a rose-grey ground, magenta for actions. */
 :root {
-  --paper: #f4f6f7;
-  --ink: #15202a;
-  --muted: #566572;
-  --line: #d4dbe1;
-  --accent: #1d5c86;
-  --readout: #e6edf2;
-  --sans: "Schibsted Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --ground: #f6f2f5;
+  --surface: #ece2ea;
+  --ink: #1e1a2b;
+  --muted: #5f5870;
+  --line: #ddd2db;
+  --accent: #a3247a;
+  --on-accent: #ffffff;
+  --font: "Archivo", "Helvetica Neue", Arial, system-ui, sans-serif;
   color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --paper: #0f151b; --ink: #e3e9ee; --muted: #93a2ae; --line: #26323c; --accent: #7fb7dd; --readout: #172330;
+    --ground: #16121d; --surface: #241c2c; --ink: #efe9f1; --muted: #aea3b8; --line: #342a3d; --accent: #e57fc3; --on-accent: #1a1020;
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --paper: #0f151b; --ink: #e3e9ee; --muted: #93a2ae; --line: #26323c; --accent: #7fb7dd; --readout: #172330;
+  --ground: #16121d; --surface: #241c2c; --ink: #efe9f1; --muted: #aea3b8; --line: #342a3d; --accent: #e57fc3; --on-accent: #1a1020;
   color-scheme: dark;
 }
+
 *, *::before, *::after { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
 body {
   margin: 0;
-  background: var(--paper);
+  background: var(--ground);
   color: var(--ink);
-  font-family: var(--sans);
+  font-family: var(--font);
   font-size: 1.0625rem;
-  line-height: 1.6;
+  line-height: 1.62;
+  font-variation-settings: "wdth" 100;
 }
-.wrap {
-  max-width: 50rem;
-  margin: 0 auto;
-  padding-left: max(16px, env(safe-area-inset-left, 0px));
-  padding-right: max(16px, env(safe-area-inset-right, 0px));
-}
-a { color: var(--accent); text-underline-offset: 0.18em; }
-a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
-h1, h2, h3 { text-wrap: balance; margin: 0; line-height: 1.2; }
+img { max-width: 100%; display: block; }
 p { margin: 0; }
-code { font-family: var(--mono); font-size: 0.88em; }
+h1, h2, h3 { margin: 0; text-wrap: balance; }
+a { color: var(--accent); text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
 
-/* Header */
-header { padding-block: 4.5rem 3rem; border-bottom: 1px solid var(--line); }
-header .wrap { display: grid; gap: 1.25rem; }
-h1 { font-size: clamp(2.4rem, 7vw, 3.6rem); font-weight: 700; letter-spacing: -0.02em; }
-.role { font-size: clamp(1.2rem, 3vw, 1.45rem); font-weight: 500; color: var(--accent); max-width: 36rem; }
-.intro { max-width: 40rem; color: var(--muted); }
-.links { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; font-size: 0.95rem; }
-
-/* Sections */
-section { padding-block: 3.5rem; border-bottom: 1px solid var(--line); }
-section:last-of-type { border-bottom: 0; }
-.label {
-  font-family: var(--mono);
-  font-size: 0.78rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 2rem;
+.wrap {
+  max-width: 68rem;
+  margin: 0 auto;
+  padding-left: max(20px, env(safe-area-inset-left, 0px));
+  padding-right: max(20px, env(safe-area-inset-right, 0px));
 }
 
-/* Capabilities */
-.caps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.75rem 2.25rem; margin: 0; }
-.caps dt { font-weight: 600; margin-bottom: 0.3rem; }
-.caps dd { margin: 0; color: var(--muted); font-size: 0.97rem; }
-
-/* Case studies */
-.cases { display: grid; gap: 3.25rem; }
-.case { display: grid; grid-template-columns: minmax(0, 1fr) 11rem; gap: 1.25rem 2rem; align-items: start; }
-.case > div { min-width: 0; }
-.case h3 { font-size: 1.35rem; font-weight: 600; margin-bottom: 0.35rem; }
-.where { font-size: 0.9rem; color: var(--muted); margin-bottom: 1rem; }
-.steps { display: grid; gap: 0.75rem; margin: 0; }
-.steps dt { font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
-.steps dd { margin: 0.1rem 0 0; }
-.tags { list-style: none; margin: 1rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.4rem; }
-.tags li { font-family: var(--mono); font-size: 0.74rem; color: var(--muted); border: 1px solid var(--line); border-radius: 3px; padding: 0.1rem 0.45rem; }
-.readout {
-  background: var(--readout);
-  border-radius: 4px;
-  padding: 1rem 1.1rem;
-  font-family: var(--mono);
-  font-variant-numeric: tabular-nums;
-  position: sticky;
-  top: 1.5rem;
+/* ---------- Hero ---------- */
+.hero { padding-block: clamp(2.5rem, 7vw, 5.5rem) clamp(3rem, 7vw, 5rem); }
+.hero .wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
 }
-.readout .big { display: block; font-size: 1.9rem; font-weight: 500; line-height: 1.1; color: var(--ink); letter-spacing: -0.02em; }
-.readout .unit { display: block; font-size: 0.78rem; color: var(--muted); margin-top: 0.35rem; line-height: 1.45; }
-.readout ul { list-style: none; margin: 0.8rem 0 0; padding: 0.8rem 0 0; border-top: 1px solid var(--line); font-size: 0.78rem; color: var(--muted); display: grid; gap: 0.2rem; }
+.portrait {
+  position: relative;
+  margin: 0;
+  max-width: 26rem;
+}
+.portrait img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 999px 999px 18px 18px;
+  background: var(--surface);
+}
+.portrait::after {
+  content: "";
+  position: absolute;
+  inset: 0.9rem -0.9rem -0.9rem 0.9rem;
+  border: 1.5px solid var(--accent);
+  border-radius: 999px 999px 18px 18px;
+  z-index: -1;
+}
+.hero-text { min-width: 0; display: grid; gap: 1.4rem; }
+h1 {
+  font-size: clamp(2.6rem, 6vw, 5.2rem);
+  line-height: 0.92;
+  font-weight: 800;
+  font-variation-settings: "wdth" 115;
+  letter-spacing: -0.035em;
+}
+h1 span { display: block; }
+.role {
+  font-size: clamp(1.2rem, 2.2vw, 1.5rem);
+  line-height: 1.35;
+  font-weight: 500;
+  font-variation-settings: "wdth" 108;
+  max-width: 32rem;
+}
+.intro { color: var(--muted); max-width: 36rem; }
+.actions { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; padding-top: 0.3rem; }
+.btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.75rem 1.3rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.98rem;
+  text-decoration: none;
+  border: 1.5px solid var(--accent);
+  transition: background-color .15s ease, color .15s ease;
+}
+.btn-primary { background: var(--accent); color: var(--on-accent); }
+.btn-primary:hover { background: transparent; color: var(--accent); }
+.btn-ghost { color: var(--ink); border-color: var(--line); }
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+.btn svg { width: 1.05em; height: 1.05em; fill: currentColor; flex: none; }
 
-/* Other work, experience */
-.list { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; }
-.list li { padding-left: 1.1rem; position: relative; }
-.list li::before { content: ""; position: absolute; left: 0; top: 0.72em; width: 0.45rem; height: 1px; background: var(--accent); }
-.jobs { display: grid; gap: 1.25rem; }
-.job { display: grid; grid-template-columns: 11rem minmax(0, 1fr); gap: 0.25rem 2rem; }
-.job .when { font-family: var(--mono); font-size: 0.85rem; color: var(--muted); font-variant-numeric: tabular-nums; padding-top: 0.15rem; }
-.job strong { font-weight: 600; }
-.job span { color: var(--muted); }
+/* ---------- Sections ---------- */
+.section { padding-block: clamp(3.5rem, 8vw, 6rem); border-top: 1px solid var(--line); }
+.section-head { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 1rem 3rem; margin-bottom: clamp(2rem, 4vw, 3.25rem); align-items: end; }
+h2 {
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  line-height: 1.02;
+  font-weight: 750;
+  font-variation-settings: "wdth" 118;
+  letter-spacing: -0.02em;
+}
+.section-head p { color: var(--muted); max-width: 36rem; }
+
+/* What I work on */
+.areas { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.25rem 2.5rem; margin: 0; }
+.areas div { min-width: 0; border-top: 3px solid var(--ink); padding-top: 1rem; }
+.areas dt { font-weight: 700; font-size: 1.1rem; font-variation-settings: "wdth" 110; margin-bottom: 0.45rem; }
+.areas dd { margin: 0; color: var(--muted); font-size: 0.98rem; }
+
+/* Selected work */
+.cases { display: grid; gap: clamp(3rem, 6vw, 4.5rem); }
+.case { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 1.25rem 3rem; }
+.case-lead { min-width: 0; }
+.figure {
+  display: block;
+  font-size: clamp(3rem, 6.5vw, 4.6rem);
+  line-height: 0.95;
+  font-weight: 800;
+  font-variation-settings: "wdth" 70;
+  letter-spacing: -0.02em;
+  color: var(--accent);
+  font-variant-numeric: lining-nums;
+}
+.figure-note { display: block; margin-top: 0.5rem; color: var(--muted); font-size: 0.95rem; max-width: 16rem; }
+.case-body { min-width: 0; display: grid; gap: 0.85rem; }
+.case h3 { font-size: clamp(1.35rem, 2.4vw, 1.65rem); line-height: 1.2; font-weight: 700; font-variation-settings: "wdth" 108; }
+.context { color: var(--muted); font-size: 0.95rem; }
+.case-body p b { font-weight: 650; }
+.built-with { color: var(--muted); font-size: 0.93rem; }
+
+/* Also built */
+.more { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.4rem 3rem; }
+.more li { min-width: 0; padding-left: 1.4rem; position: relative; }
+.more li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 0.55rem; height: 0.55rem; border-radius: 50%; border: 1.5px solid var(--accent); }
+
+/* Experience */
+.timeline { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+.timeline li { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 0.3rem 3rem; padding-block: 1.4rem; border-bottom: 1px solid var(--line); }
+.timeline li:first-child { padding-top: 0; }
+.when { color: var(--muted); font-variant-numeric: tabular-nums; }
+.timeline strong { font-weight: 700; font-variation-settings: "wdth" 108; font-size: 1.1rem; }
+.timeline .org { display: block; }
+.timeline .what { color: var(--muted); display: block; margin-top: 0.2rem; }
 
 /* Skills */
-.skills { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.75rem 2rem; margin: 0; }
-.skills dt { font-weight: 600; margin-bottom: 0.35rem; }
-.skills dd { margin: 0; color: var(--muted); font-size: 0.97rem; }
+.skills { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem 3rem; margin: 0; }
+.skills div { min-width: 0; }
+.skills dt { font-weight: 700; font-variation-settings: "wdth" 110; margin-bottom: 0.6rem; }
+.skills dd { margin: 0; display: flex; flex-wrap: wrap; gap: 0.45rem; }
+.skills dd span { background: var(--surface); border-radius: 999px; padding: 0.22rem 0.75rem; font-size: 0.9rem; }
 
 /* Contact */
-.contact { display: grid; gap: 1rem; }
-.email-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; }
-.email { font-family: var(--mono); font-size: 1.05rem; user-select: all; word-break: break-all; }
-button.copy {
-  font: 500 0.8rem var(--mono);
-  color: var(--accent);
-  background: transparent;
-  border: 1px solid var(--line);
-  border-radius: 4px;
-  padding: 0.3rem 0.7rem;
-  cursor: pointer;
+.contact { background: var(--surface); }
+.contact .wrap { display: grid; gap: 1.5rem; }
+.contact h2 { font-size: clamp(2.2rem, 6vw, 4rem); }
+.contact-lead { color: var(--muted); max-width: 34rem; }
+.email-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1rem; }
+.email {
+  font-size: clamp(1.35rem, 3.6vw, 2.2rem);
+  font-weight: 650;
+  font-variation-settings: "wdth" 104;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 2px solid var(--accent);
+  word-break: break-all;
 }
-button.copy:hover { border-color: var(--accent); }
-.note { color: var(--muted); font-size: 0.95rem; }
-footer { padding-block: 2rem 3rem; font-size: 0.85rem; color: var(--muted); }
+.email:hover { color: var(--accent); }
+.copy {
+  font: inherit; font-size: 0.9rem; font-weight: 600;
+  color: var(--accent); background: transparent;
+  border: 1.5px solid var(--accent); border-radius: 999px;
+  padding: 0.35rem 0.95rem; cursor: pointer;
+}
+.copy:hover { background: var(--accent); color: var(--on-accent); }
+.contact-links { display: flex; flex-wrap: wrap; gap: 0.6rem 1.75rem; }
+.code-note { color: var(--muted); font-size: 0.95rem; max-width: 40rem; }
+footer { background: var(--surface); padding-block: 2.5rem 3rem; color: var(--muted); font-size: 0.88rem; }
+footer .wrap { border-top: 1px solid var(--line); padding-top: 1.5rem; }
 
-@media (max-width: 640px) {
-  header { padding-block: 3rem 2.25rem; }
-  section { padding-block: 2.75rem; }
-  .case { grid-template-columns: minmax(0, 1fr); }
-  .readout { position: static; order: -1; }
-  .job { grid-template-columns: minmax(0, 1fr); }
-  .skills, .caps { grid-template-columns: minmax(0, 1fr); }
+/* ---------- Load moment ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .portrait img { animation: rise .7s cubic-bezier(.2,.7,.2,1) both; }
+  .portrait::after { animation: settle .9s .15s cubic-bezier(.2,.7,.2,1) both; }
+  @keyframes rise { from { transform: translateY(14px); opacity: .4; } to { transform: none; opacity: 1; } }
+  @keyframes settle { from { transform: translate(-0.9rem, -0.9rem); } to { transform: none; } }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* ---------- Narrow screens ---------- */
+@media (max-width: 860px) {
+  .areas { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 720px) {
+  .hero .wrap { grid-template-columns: minmax(0, 1fr); }
+  .portrait { max-width: 15rem; }
+  .section-head, .case, .timeline li { grid-template-columns: minmax(0, 1fr); }
+  .areas, .more, .skills { grid-template-columns: minmax(0, 1fr); }
+  .figure-note { max-width: none; }
 }
 </style>
 </head>
 <body>
 
-<header>
+<header class="hero">
   <div class="wrap">
-    <h1>Muhammad Hassan</h1>
-    <p class="role">AI engineer building LLM applications, RAG and evaluation, on solid data and backend foundations</p>
-    <p class="intro">About 2.5 years shipping production software. Today most of my work is LLM systems: model routing and cost, retrieval-augmented generation (RAG), structured outputs, guardrails and evaluation, plus the data pipelines and APIs underneath them. I treat model behaviour as something to measure. Replays on real data, mutation tests and consistency scores decide whether a change is ready.</p>
-    <nav class="links" aria-label="Contact links">
-      <a href="#contact">Email</a>
-      <a href="https://www.linkedin.com/in/muhammad-hassan-929312338/" rel="noopener">LinkedIn</a>
-      <a href="https://github.com/Muhammad-Hassan123" rel="noopener">GitHub</a>
-    </nav>
+    <figure class="portrait">
+      <picture>
+        <source srcset="hassan.webp" type="image/webp">
+        <img src="hassan.jpg" width="640" height="800" alt="Portrait of Muhammad Hassan">
+      </picture>
+    </figure>
+    <div class="hero-text">
+      <h1><span>Muhammad</span><span>Hassan</span></h1>
+      <p class="role">AI engineer building LLM applications, RAG and evaluation, on solid data and backend foundations.</p>
+      <p class="intro">About 2.5 years shipping production software. Most of my work today is LLM systems: model routing and cost, retrieval-augmented generation, structured outputs, guardrails and evaluation, plus the data pipelines and APIs underneath them. I treat model behaviour as something to measure, so replays on real data and consistency scores decide when a change is ready.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#contact">Get in touch</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/muhammad-hassan-929312338/" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          LinkedIn
+        </a>
+        <a class="btn btn-ghost" href="https://github.com/Muhammad-Hassan123" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57v-2.04c-3.34.73-4.04-1.6-4.04-1.6-.55-1.4-1.34-1.77-1.34-1.77-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22v3.29c0 .32.22.7.82.58A12 12 0 0 0 12 .3"/></svg>
+          GitHub
+        </a>
+      </div>
+    </div>
   </div>
 </header>
 
 <main>
-<section aria-labelledby="caps-h">
+
+<section class="section" aria-labelledby="areas-h">
   <div class="wrap">
-    <h2 class="label" id="caps-h">What I work on</h2>
-    <dl class="caps">
+    <div class="section-head">
+      <h2 id="areas-h">What I work on</h2>
+      <p>The parts of an AI product I am trusted with, from the model call down to the database.</p>
+    </div>
+    <dl class="areas">
       <div><dt>LLM application engineering</dt><dd>System prompts and rulebooks, structured outputs validated against a schema, and streaming responses from async FastAPI services.</dd></div>
       <div><dt>RAG and retrieval</dt><dd>Document ingestion, embeddings and vector search, query rewriting and an LLM relevance pass, with answers grounded in cited sources.</dd></div>
       <div><dt>Evaluation and guardrails</dt><dd>Replays on real data, mutation tests and run-to-run consistency metrics. Deterministic guardrails that fail open and can be switched off.</dd></div>
@@ -174,158 +282,158 @@ footer { padding-block: 2rem 3rem; font-size: 0.85rem; color: var(--muted); }
   </div>
 </section>
 
-<section aria-labelledby="work-h">
+<section class="section" aria-labelledby="work-h">
   <div class="wrap">
-    <h2 class="label" id="work-h">Selected work</h2>
+    <div class="section-head">
+      <h2 id="work-h">Selected work</h2>
+      <p>Five problems, what I did about them, and how I measured the result. Work code stays private, so the numbers come from my own replays, tests and benchmarks.</p>
+    </div>
     <div class="cases">
 
       <article class="case">
-        <div>
+        <div class="case-lead">
+          <span class="figure">~80%</span>
+          <span class="figure-note">lower LLM cost</span>
+        </div>
+        <div class="case-body">
           <h3>LLM cost optimisation with model routing</h3>
-          <p class="where">LLMOps · enterprise market-intelligence platform</p>
-          <dl class="steps">
-            <div><dt>Problem</dt><dd>Production LLM workloads ran on premium hosted models, so cost grew with every call.</dd></div>
-            <div><dt>What I did</dt><dd>Put every chat, embedding and web-search call behind a LiteLLM gateway and moved workloads to a self-hosted open-weights model (Gemma). A fallback chain sends a request to a paid model when the self-hosted one errors, times out or returns invalid JSON, so answers stay usable. Virtual keys attribute cost to each pipeline, and a test fails if any code calls a provider directly. Developed to GDPR compliance requirements.</dd></div>
-            <div><dt>Result</dt><dd>LLM spend down by about 80%, with no change in what users see.</dd></div>
-          </dl>
-          <ul class="tags"><li>LiteLLM</li><li>self-hosted inference</li><li>fallback chains</li><li>cost attribution</li></ul>
+          <p class="context">Enterprise market-intelligence platform</p>
+          <p><b>The problem.</b> Production LLM workloads ran on premium hosted models, so cost grew with every call.</p>
+          <p><b>What I did.</b> Put every chat, embedding and web-search call behind a LiteLLM gateway and moved workloads to a self-hosted open-weights model (Gemma). A fallback chain sends a request to a paid model when the self-hosted one errors, times out or returns invalid JSON, so answers stay usable. Virtual keys attribute cost to each pipeline, and a test fails if any code calls a provider directly. Developed to GDPR compliance requirements.</p>
+          <p><b>Result.</b> LLM spend down by about 80%, with no change in what users see.</p>
+          <p class="built-with">Built with LiteLLM, Gemma, FastAPI and Python.</p>
         </div>
-        <aside class="readout" aria-label="Measured result">
-          <span class="big">~80%</span>
-          <span class="unit">lower LLM cost</span>
-          <ul><li>open model first</li><li>paid model as fallback</li></ul>
-        </aside>
       </article>
 
       <article class="case">
-        <div>
+        <div class="case-lead">
+          <span class="figure">842<small style="font-size:.5em; font-weight:600"> / 968</small></span>
+          <span class="figure-note">injected errors corrected, with no wrong corrections</span>
+        </div>
+        <div class="case-body">
           <h3>Guardrails and evaluation for LLM-written emails</h3>
-          <p class="where">AI safety · scheduled market briefings</p>
-          <dl class="steps">
-            <div><dt>Problem</dt><dd>An LLM writes scheduled briefings with cited sources. Now and then a claim credited one company's news to another. The prompt was right in 14 of 14 controlled runs, so more prompt text would not fix a rare model slip.</dd></div>
-            <div><dt>What I did</dt><dd>Built a deterministic post-generation guardrail. It checks each claim's subject against who owns the sources it cites, and relabels the claim when the evidence clearly belongs to one other company. It fails open and has a kill switch. I evaluated it with a mutation test, injecting 968 wrong subjects into 8 real emails. The test also exposed a sentence splitter that broke claims at abbreviations, which I fixed.</dd></div>
-            <div><dt>Result</dt><dd>842 of 968 injected errors corrected. The other 126 were ambiguous multi-company cases the guard is designed to skip. No wrong corrections, and untouched emails came out unchanged.</dd></div>
-          </dl>
-          <ul class="tags"><li>guardrails</li><li>mutation testing</li><li>LLM evaluation</li><li>citations</li></ul>
+          <p class="context">Scheduled market briefings with cited sources</p>
+          <p><b>The problem.</b> Now and then a briefing credited one company's news to another. The prompt was right in 14 of 14 controlled runs, so more prompt text would not fix a rare model slip.</p>
+          <p><b>What I did.</b> Built a deterministic post-generation guardrail. It checks each claim's subject against who owns the sources it cites, and relabels the claim when the evidence clearly belongs to one other company. It fails open and has a kill switch. I evaluated it with a mutation test, injecting 968 wrong subjects into 8 real emails. The test also exposed a sentence splitter that broke claims at abbreviations, which I fixed.</p>
+          <p><b>Result.</b> 842 of 968 injected errors corrected. The other 126 were ambiguous multi-company cases the guard is designed to skip. Untouched emails came out unchanged.</p>
+          <p class="built-with">Built with Python, mutation testing and replays of real emails.</p>
         </div>
-        <aside class="readout" aria-label="Measured result">
-          <span class="big">842 / 968</span>
-          <span class="unit">injected errors fixed</span>
-          <ul><li>126 ambiguous, skipped</li><li>0 wrong changes</li></ul>
-        </aside>
       </article>
 
       <article class="case">
-        <div>
+        <div class="case-lead">
+          <span class="figure">0.95</span>
+          <span class="figure-note">run-to-run consistency (Jaccard), p95 latency 6.0 s</span>
+        </div>
+        <div class="case-body">
           <h3>Consistent retrieval in a RAG system</h3>
-          <p class="where">RAG · backend behind 26 business agents</p>
-          <dl class="steps">
-            <div><dt>Problem</dt><dd>The RAG backend runs vector search, LLM query rewriting and an LLM relevance pass over an internal data lake. The same question returned 31, 124 or 154 sources on different runs. The relevance model looped until its token limit, 28% of requests timed out, and the timeout fallback kept almost everything.</dd></div>
-            <div><dt>What I did</dt><dd>Measured retrieval consistency as run-to-run overlap (Jaccard) and compared models offline: 0.93 for the chosen model against 0.57 for the alternative. I switched the relevance model, set the request format per model, rejected truncated outputs (<code>finish_reason = length</code>), and logged finish reasons and token counts so the failure would show up in monitoring.</dd></div>
-            <div><dt>Result</dt><dd>A replay of 7 real candidate pools, 5 runs each: 35 of 35 usable, overlap 0.95, p95 latency 6.0 s.</dd></div>
-          </dl>
-          <ul class="tags"><li>RAG</li><li>vector search</li><li>query rewriting</li><li>retrieval evaluation</li></ul>
+          <p class="context">Backend behind 26 business AI agents</p>
+          <p><b>The problem.</b> The RAG backend runs vector search, LLM query rewriting and an LLM relevance pass over an internal data lake. The same question returned 31, 124 or 154 sources on different runs. The relevance model looped until its token limit, 28% of requests timed out, and the timeout fallback kept almost everything.</p>
+          <p><b>What I did.</b> Measured retrieval consistency as run-to-run overlap and compared models offline: 0.93 for the chosen model against 0.57 for the alternative. I switched the relevance model, set the request format per model, rejected truncated outputs, and logged finish reasons and token counts so the failure would show up in monitoring.</p>
+          <p><b>Result.</b> A replay of 7 real candidate pools, 5 runs each: 35 of 35 usable, overlap 0.95, p95 latency 6.0 s.</p>
+          <p class="built-with">Built with vector search, query rewriting, FastAPI and an offline replay harness.</p>
         </div>
-        <aside class="readout" aria-label="Measured result">
-          <span class="big">0.95</span>
-          <span class="unit">run-to-run overlap (Jaccard)</span>
-          <ul><li>p95 6.0 s</li><li>35 / 35 runs usable</li></ul>
-        </aside>
       </article>
 
       <article class="case">
-        <div>
-          <h3>Real-time backend for 5,000+ concurrent users</h3>
-          <p class="where">Backend · live web product</p>
-          <dl class="steps">
-            <div><dt>Problem</dt><dd>A live product needed persistent two-way connections for thousands of users at once.</dd></div>
-            <div><dt>What I did</dt><dd>Built an async Python backend on FastAPI with WebSockets.</dd></div>
-            <div><dt>Result</dt><dd>It served more than 5,000 concurrent users.</dd></div>
-          </dl>
-          <ul class="tags"><li>FastAPI</li><li>WebSockets</li><li>async Python</li></ul>
+        <div class="case-lead">
+          <span class="figure">5,000+</span>
+          <span class="figure-note">concurrent users</span>
         </div>
-        <aside class="readout" aria-label="Measured result">
-          <span class="big">5,000+</span>
-          <span class="unit">concurrent users</span>
-        </aside>
+        <div class="case-body">
+          <h3>Real-time backend for a live product</h3>
+          <p class="context">Live web product</p>
+          <p><b>The problem.</b> The product needed persistent two-way connections for thousands of users at once.</p>
+          <p><b>What I did.</b> Built an async Python backend on FastAPI with WebSockets.</p>
+          <p><b>Result.</b> It served more than 5,000 concurrent users.</p>
+          <p class="built-with">Built with FastAPI, WebSockets and async Python.</p>
+        </div>
       </article>
 
       <article class="case">
-        <div>
+        <div class="case-lead">
+          <span class="figure">92%</span>
+          <span class="figure-note">accuracy</span>
+        </div>
+        <div class="case-body">
           <h3>Computer-vision driving-test evaluator</h3>
-          <p class="where">Computer vision · deep learning</p>
-          <dl class="steps">
-            <div><dt>Problem</dt><dd>Score a driving test automatically instead of by hand.</dd></div>
-            <div><dt>What I did</dt><dd>Built a computer-vision evaluator with OpenCV and a deep-learning model.</dd></div>
-            <div><dt>Result</dt><dd>It graded tests correctly 92% of the time.</dd></div>
-          </dl>
-          <ul class="tags"><li>OpenCV</li><li>deep learning</li><li>Python</li></ul>
+          <p class="context">Computer vision and deep learning</p>
+          <p><b>The problem.</b> Score a driving test automatically instead of by hand.</p>
+          <p><b>What I did.</b> Built a computer-vision evaluator with OpenCV and a deep-learning model.</p>
+          <p><b>Result.</b> It graded tests correctly 92% of the time.</p>
+          <p class="built-with">Built with OpenCV, deep learning and Python.</p>
         </div>
-        <aside class="readout" aria-label="Measured result">
-          <span class="big">92%</span>
-          <span class="unit">accuracy</span>
-        </aside>
       </article>
 
     </div>
   </div>
 </section>
 
-<section aria-labelledby="more-h">
+<section class="section" aria-labelledby="more-h">
   <div class="wrap">
-    <h2 class="label" id="more-h">Also built</h2>
-    <ul class="list">
+    <div class="section-head">
+      <h2 id="more-h">Also built</h2>
+    </div>
+    <ul class="more">
       <li>Replaced LLM-based client matching with a deterministic resolver, which stopped answers that mislabelled the client as a competitor's subsidiary.</li>
       <li>Streamed chart answers and repaired only the invalid chart JSON in place, instead of regenerating a prompt of about 500,000 characters.</li>
       <li>A pipeline that reads company accounts from 11 national business registries, with a quality gate that checks every figure before it is stored.</li>
       <li>PostgreSQL jobs that stay safe when two copies of a service run at once, using advisory locks and conflict-safe upserts.</li>
       <li>A fix for a server-side request forgery (SSRF) hole in a service that fetches outside web pages.</li>
-      <li>Personal: a script-to-video pipeline on local open models (Stable Diffusion, AnimateDiff, WhisperX), and a CNN leaf-species classifier at 95% validation accuracy served as a REST API.</li>
+      <li>Personal projects: a script-to-video pipeline on local open models (Stable Diffusion, AnimateDiff, WhisperX), and a CNN leaf-species classifier at 95% validation accuracy served as a REST API.</li>
     </ul>
   </div>
 </section>
 
-<section aria-labelledby="exp-h">
+<section class="section" aria-labelledby="exp-h">
   <div class="wrap">
-    <h2 class="label" id="exp-h">Experience</h2>
-    <div class="jobs">
-      <div class="job">
-        <div class="when">Oct 2025 – now</div>
-        <div><strong>Associate Software Engineer, WatchMyCompetitor</strong><br><span>Competitive-intelligence platform for enterprise clients. LLM features, RAG, data pipelines and backend services.</span></div>
-      </div>
-      <div class="job">
-        <div class="when">Jul 2024 – Sep 2025</div>
-        <div><strong>Associate Software Engineer, Dexterz Sol</strong><br><span>Real-time backends, RAG features, computer vision and time-series forecasting models.</span></div>
-      </div>
-      <div class="job">
-        <div class="when">Education</div>
-        <div><strong>BS Computer Science</strong><br><span>Information Technology University</span></div>
-      </div>
+    <div class="section-head">
+      <h2 id="exp-h">Experience</h2>
     </div>
+    <ol class="timeline" reversed>
+      <li>
+        <span class="when">Oct 2025 to now</span>
+        <div><strong class="org">Associate Software Engineer, WatchMyCompetitor</strong><span class="what">Competitive-intelligence platform for enterprise clients. LLM features, RAG, data pipelines and backend services.</span></div>
+      </li>
+      <li>
+        <span class="when">Jul 2024 to Sep 2025</span>
+        <div><strong class="org">Associate Software Engineer, Dexterz Sol</strong><span class="what">Real-time backends, RAG features, computer vision and time-series forecasting models.</span></div>
+      </li>
+      <li>
+        <span class="when">Education</span>
+        <div><strong class="org">BS Computer Science</strong><span class="what">Information Technology University</span></div>
+      </li>
+    </ol>
   </div>
 </section>
 
-<section aria-labelledby="skills-h">
+<section class="section" aria-labelledby="skills-h">
   <div class="wrap">
-    <h2 class="label" id="skills-h">Skills</h2>
+    <div class="section-head">
+      <h2 id="skills-h">Skills</h2>
+    </div>
     <dl class="skills">
-      <div><dt>LLM engineering</dt><dd>Prompt and system-prompt design, structured outputs, RAG, embeddings and vector search, guardrails, evaluation, LiteLLM routing and fallbacks</dd></div>
-      <div><dt>Models and ML</dt><dd>OpenAI, Anthropic, Google Gemini, open models (Gemma, Ollama, Hugging Face), PyTorch, TensorFlow, scikit-learn, OpenCV</dd></div>
-      <div><dt>Data</dt><dd>Python, SQL, PostgreSQL, BigQuery, ETL/ELT, data modelling, data quality and validation, pandas, Pub/Sub</dd></div>
-      <div><dt>Backend and cloud</dt><dd>FastAPI, Django, REST, WebSockets, asyncio, SQLAlchemy and Alembic, Redis, pytest, Docker, Kubernetes, GCP, AWS, GitHub Actions</dd></div>
+      <div><dt>LLM engineering</dt><dd><span>Prompt design</span><span>Structured outputs</span><span>RAG</span><span>Embeddings</span><span>Vector search</span><span>Guardrails</span><span>Evaluation</span><span>LiteLLM routing</span></dd></div>
+      <div><dt>Models and ML</dt><dd><span>OpenAI</span><span>Anthropic</span><span>Google Gemini</span><span>Gemma</span><span>Ollama</span><span>Hugging Face</span><span>PyTorch</span><span>TensorFlow</span><span>scikit-learn</span><span>OpenCV</span></dd></div>
+      <div><dt>Data</dt><dd><span>Python</span><span>SQL</span><span>PostgreSQL</span><span>BigQuery</span><span>ETL/ELT</span><span>Data modelling</span><span>Data quality</span><span>pandas</span><span>Pub/Sub</span></dd></div>
+      <div><dt>Backend and cloud</dt><dd><span>FastAPI</span><span>Django</span><span>REST</span><span>WebSockets</span><span>asyncio</span><span>SQLAlchemy</span><span>Redis</span><span>pytest</span><span>Docker</span><span>Kubernetes</span><span>GCP</span><span>AWS</span><span>GitHub Actions</span></dd></div>
     </dl>
   </div>
 </section>
 
-<section id="contact" aria-labelledby="contact-h">
-  <div class="wrap contact">
-    <h2 class="label" id="contact-h">Contact</h2>
+<section class="section contact" id="contact" aria-labelledby="contact-h">
+  <div class="wrap">
+    <h2 id="contact-h">Let's talk</h2>
+    <p class="contact-lead">Questions about any of this work are welcome. Email is the quickest way to reach me.</p>
     <div class="email-row">
       <a class="email" href="mailto:hs197946@gmail.com" id="email">hs197946@gmail.com</a>
       <button class="copy" type="button" id="copy-email">Copy</button>
     </div>
-    <p><a href="https://www.linkedin.com/in/muhammad-hassan-929312338/" rel="noopener">linkedin.com/in/muhammad-hassan-929312338</a></p>
-    <p class="note">My work code is private (client work); some personal projects are at <a href="https://github.com/Muhammad-Hassan123" rel="noopener">github.com/Muhammad-Hassan123</a>.</p>
+    <div class="contact-links">
+      <a href="https://www.linkedin.com/in/muhammad-hassan-929312338/" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/Muhammad-Hassan123" rel="noopener">GitHub</a>
+    </div>
+    <p class="code-note">My work code is private (client work); some personal projects are at <a href="https://github.com/Muhammad-Hassan123" rel="noopener">github.com/Muhammad-Hassan123</a>.</p>
   </div>
 </section>
 </main>
